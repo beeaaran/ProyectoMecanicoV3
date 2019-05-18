@@ -115,28 +115,28 @@ public class mostarServicios extends javax.swing.JFrame {
              int contador = 0;
              while(st1.hasMoreElements()){
                 switch(contador){
-                     case 0: jTextArea1.setText( jTextArea1.getText() + "\n" + "Id" + (String)st1.nextElement() + "\n");break;
-                     case 1: jTextArea1.setText( jTextArea1.getText() + "\n" + "Nombre del servicio" + (String)st1.nextElement() + "\n");break;
-                     case 2: jTextArea1.setText( jTextArea1.getText() + "\n" + "Costo" + (String)st1.nextElement() + "\n");break;
-                     case 3: jTextArea1.setText( jTextArea1.getText() + "\n" + "Mecanico Asignado" + (String)st1.nextElement() + "\n");break;
+                     case 0: jTextArea1.setText( jTextArea1.getText() + "\n" + "Id:   " + (String)st1.nextElement() + "\n");break;
+                     case 1: jTextArea1.setText( jTextArea1.getText() + "\n" + "Nombre del servicio:   " + (String)st1.nextElement() + "\n");break;
+                     case 2: jTextArea1.setText( jTextArea1.getText() + "\n" + "Costo:   " + (String)st1.nextElement() + "\n");break;
+                     case 3: jTextArea1.setText( jTextArea1.getText() + "\n" + "Mecanico Asignado:  " + (String)st1.nextElement() + "\n");break;
                      
-                     case 4: jTextArea1.setText(jTextArea1.getText() + "\n" + "Fecha llegada:" + (String)st1.nextElement() + "\n");break;
-                     case 5: jTextArea1.setText(jTextArea1.getText() + "\n" + "Fecha de entrega:" + (String)st1.nextElement() + "\n");break;
-                     case 6: jTextArea1.setText(jTextArea1.getText() + "\n" + "Modelo" + (String)st1.nextElement() + "\n");break;
-                     case 7: jTextArea1.setText(jTextArea1.getText() + "\n" + "Marca" + (String)st1.nextElement() + "\n");break;
-                     case 8: jTextArea1.setText(jTextArea1.getText() + "\n" + "Color:" +(String)st1.nextElement() + "\n");break;
-                     case 9: jTextArea1.setText(jTextArea1.getText() + "\n" + "Submarca:" + (String)st1.nextElement() + "\n");break;
-                     case 10: jTextArea1.setText(jTextArea1.getText() + "\n" + "Placas:" + (String)st1.nextElement() + "\n");break;
-                     case 11: jTextArea1.setText(jTextArea1.getText() + "\n" + "Kilometraje" + (String)st1.nextElement() + "\n");break;
-                     case 12: jTextArea1.setText(jTextArea1.getText() + "\n" + "Numero De Serie:" + (String)st1.nextElement() + "\n");break;
-                     case 13: jTextArea1.setText(jTextArea1.getText() + "\n" + "Nombre Cliente" + (String)st1.nextElement() + "\n");break;
-                     case 14: jTextArea1.setText(jTextArea1.getText() + "\n" + "Direccion Cliente" + (String)st1.nextElement() + "\n");break;
-                     case 15: jTextArea1.setText(jTextArea1.getText() + "\n" + "Telefono Cliente" +(String)st1.nextElement() + "\n");break;
-                     case 16: jTextArea1.setText(jTextArea1.getText() + "\n" + "Correo:" + (String)st1.nextElement() + "\n");break;
-                     case 17: jTextArea1.setText(jTextArea1.getText() + "\n" +  "Ultima Visita" +(String)st1.nextElement() + "\n");break;
-                     case 18: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Mecanico" +(String)st1.nextElement() + "\n");break;
+                     case 4: jTextArea1.setText(jTextArea1.getText() + "\n" + "Fecha llegada:   " + (String)st1.nextElement() + "\n");break;
+                     case 5: jTextArea1.setText(jTextArea1.getText() + "\n" + "Fecha de entrega:    " + (String)st1.nextElement() + "\n");break;
+                     case 6: jTextArea1.setText(jTextArea1.getText() + "\n" + "Modelo:    " + (String)st1.nextElement() + "\n");break;
+                     case 7: jTextArea1.setText(jTextArea1.getText() + "\n" + "Marca:     " + (String)st1.nextElement() + "\n");break;
+                     case 8: jTextArea1.setText(jTextArea1.getText() + "\n" + "Color:     " +(String)st1.nextElement() + "\n");break;
+                     case 9: jTextArea1.setText(jTextArea1.getText() + "\n" + "Submarca:    " + (String)st1.nextElement() + "\n");break;
+                     case 10: jTextArea1.setText(jTextArea1.getText() + "\n" + "Placas:      " + (String)st1.nextElement() + "\n");break;
+                     case 11: jTextArea1.setText(jTextArea1.getText() + "\n" + "Kilometraje:     " + (String)st1.nextElement() + "\n");break;
+                     case 12: jTextArea1.setText(jTextArea1.getText() + "\n" + "Numero De Serie:    " + (String)st1.nextElement() + "\n");break;
+                     case 13: jTextArea1.setText(jTextArea1.getText() + "\n" + "Nombre Cliente:     " + (String)st1.nextElement() + "\n");break;
+                     case 14: jTextArea1.setText(jTextArea1.getText() + "\n" + "Direccion Cliente:    " + (String)st1.nextElement() + "\n");break;
+                     case 15: jTextArea1.setText(jTextArea1.getText() + "\n" + "Telefono Cliente:   " +(String)st1.nextElement() + "\n");break;
+                     case 16: jTextArea1.setText(jTextArea1.getText() + "\n" + "Correo:   " + (String)st1.nextElement() + "\n");break;
+                     case 17: jTextArea1.setText(jTextArea1.getText() + "\n" +  "Ultima Visita:   " +(String)st1.nextElement() + "\n");break;
+                     case 18: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Mecanico:    " +(String)st1.nextElement() + "\n");break;
                      
-                    case 19: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Cliente" + (String)st1.nextElement() + "\n");break;
+                    case 19: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Cliente:   " + (String)st1.nextElement() + "\n");break;
                  }
                  contador++;
                      

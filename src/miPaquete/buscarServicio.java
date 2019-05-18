@@ -5,6 +5,12 @@
  */
 package miPaquete;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 /**
@@ -337,51 +343,75 @@ public class buscarServicio extends javax.swing.JFrame {
        
     }//GEN-LAST:event_editarjButtonActionPerformed
 
+    
+    private static Scanner x;
+    
     private void buscarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarjButtonActionPerformed
-if(!buscarIdjTextField.getText().equals("")){
-            int codigoBuscado;
-            try {
-                
-                codigoBuscado =  Integer.parseInt(buscarIdjTextField.getText());
-                
-                servicioClase servicio = Controlador.buscarServicio(codigoBuscado);
-                
-                if(servicio.getIdDeServicio()!=-1){
-                    //Cliente datos
-                    nombreClienteTextField2.setText(servicio.getNombreCliente());
-                    numeroTelefonicoTextField.setText(servicio.getTelefono());
-                    correoClienteTextField2.setText(servicio.getCorreo());
-                    ultimaVisitaTextField2.setText(servicio.getUltimaVisita());
-                    direccionClienteTextField2.setText(servicio.getDireccion());
-                    
-                    //Datos Servicio y automovil
-                    idServiciojTextField.setText(Integer.toString(servicio.getIdDeServicio()));
-                    kilometrajeTextField.setText(servicio.getKilometraje());
-                    numeroSerieTextField.setText(servicio.getNumeroDeSerie());
-                    costojTextField.setText(Double.toString(servicio.getCosto()));
-                    fechaEntregajFormattedTextField.setText(servicio.getFechaEntrega());
-                    fechaLLegadajFormattedTextField.setText(servicio.getFechaEntrega());
-                    placasTextField1.setText(servicio.getPlacas());
-                    observacionesClientejTextField.setText(servicio.getObeservacionesCliente());
-                    observacionesMecanicojTextField.setText(servicio.getObservacionesMecanico());
-                    
-                    
-                }else{
-                    mostrarMensajeEmergente("Registro", "No existe el registroo");
-                    
-                    repaint();
-                }
-                
-                
-            } catch (Exception e) {
-                mostrarMensajeEmergente("Error", "El código debe de ser un número ");
-            }
-             
-        }else{
-            
-            mostrarMensajeEmergente("Error", "Introduce un código para buscar");
-        
+        if(!buscarIdjTextField.getText().equals("")){
+
+        try {
+
+        String codigoBuscado = buscarIdjTextField.getText();
+
+
+        File file = new File ("miArchivo2.txt");
+        BufferedReader reader = null;
+        boolean found = false;
+        String ID = ""; String COSTO = ""; String NOMBREDELSERVICIO = "";
+
+        try {
+        // FileReader reads text files in the default encoding.
+        FileReader fl = new FileReader(file);
+
+        // Always wrap FileReader in BufferedReader.
+        reader = new BufferedReader(fl);
+        String text;
+
+        while((text = reader.readLine()) != null) {
+
+        StringTokenizer st1 = new StringTokenizer(text, "%");
+
+        while(st1.hasMoreElements() &&! found ){
+        ID = (String) st1.nextElement();
+        NOMBREDELSERVICIO = (String) st1.nextElement();
+        COSTO = (String) st1.nextElement();
+
+        if (ID.equals(codigoBuscado)) {
+        found = true;
+
         }
+            }
+                }
+        
+        if (found) {
+        idServiciojTextField.setText(ID);
+        costojTextField.setText(COSTO);
+        System.out.println("Numero Encontrado");
+
+        }else{
+            System.out.println("Numero no Encontrado");
+            }
+        }finally{
+            try{
+            if(reader!= null){
+
+            reader.close();}
+
+            }catch (IOException e){}
+            }
+
+            } catch (Exception e) {
+            mostrarMensajeEmergente("Error", "El código debe de ser un número ");
+            }
+
+        }else{
+
+        mostrarMensajeEmergente("Error", "Introduce un código para buscar");
+
+        }
+
+
+
     }//GEN-LAST:event_buscarjButtonActionPerformed
 
     /**
